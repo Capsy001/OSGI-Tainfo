@@ -6,7 +6,7 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
 
-import trainidpublisher.Train;
+import models.Train;
 import trainidpublisher.TrainIDPublish;
 
 public class Activator implements BundleActivator {

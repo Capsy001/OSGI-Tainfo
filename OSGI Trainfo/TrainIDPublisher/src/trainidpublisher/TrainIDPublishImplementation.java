@@ -3,6 +3,8 @@ package trainidpublisher;
 import java.util.HashMap;
 import java.util.Map;
 
+import models.Train;
+
 
 
 public class TrainIDPublishImplementation implements TrainIDPublish {
@@ -19,9 +21,9 @@ public class TrainIDPublishImplementation implements TrainIDPublish {
 		trains.put(100, new Train(100, "ABC".toCharArray(), 'N', "Kandy", "Colombo", 'E'));
 		trains.put(200, new Train(200, "AB".toCharArray(), 'C', "Kandy", "Kurunegala", 'S'));
 		trains.put(300, new Train(300, "N".toCharArray(), 'N', "Colombo", "Kurunegala", 'N'));
-		trains.put(100, new Train(400, "ABC".toCharArray(), 'N', "Colombo", "Kandy", 'E'));
-		trains.put(200, new Train(500, "AB".toCharArray(), 'C', "Kurunegala", "Colombo", 'S'));
-		trains.put(300, new Train(600, "N".toCharArray(), 'N', "Kurunegala", "Kandy", 'N'));
+		trains.put(400, new Train(400, "ABC".toCharArray(), 'N', "Colombo", "Kandy", 'E'));
+		trains.put(500, new Train(500, "AB".toCharArray(), 'C', "Kurunegala", "Colombo", 'S'));
+		trains.put(600, new Train(600, "N".toCharArray(), 'N', "Kurunegala", "Kandy", 'N'));
 		
 		
 		
@@ -34,7 +36,7 @@ public class TrainIDPublishImplementation implements TrainIDPublish {
 		
 		for (Map.Entry<Integer, Train> set : trains.entrySet()) {
 
-           if(set.getValue().origin.equals(origin) && set.getValue().dest.equals(dest)) {
+           if(set.getValue().getOrigin().equalsIgnoreCase(origin) && set.getValue().getDest().equalsIgnoreCase(dest)) {
         	  
         	   
         	   return set.getValue();

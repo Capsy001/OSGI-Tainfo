@@ -1,4 +1,4 @@
-package trainidpublisher;
+package models;
 
 public class Train {
 

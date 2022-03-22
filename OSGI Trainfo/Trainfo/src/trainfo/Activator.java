@@ -2,21 +2,33 @@ package trainfo;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
+import org.osgi.framework.ServiceReference;
+
 
 public class Activator implements BundleActivator {
 
-	private static BundleContext context;
-
-	static BundleContext getContext() {
-		return context;
+	ServiceReference serviceReferenceTID;
+	
+	public void start(BundleContext context) throws Exception {
+		
+		System.out.println("\n\n-----Welcome to Trainfo !!!-----\n\n");
+		
+		System.out.println("Enter the service: ");
+		
+		int service=0;
+		
+		if(service==1) {
+			
+			
+		}
+		
+	
 	}
 
-	public void start(BundleContext bundleContext) throws Exception {
-		Activator.context = bundleContext;
-	}
-
-	public void stop(BundleContext bundleContext) throws Exception {
-		Activator.context = null;
+	public void stop(BundleContext context) throws Exception {
+		
+		
+		
 	}
 
 }
