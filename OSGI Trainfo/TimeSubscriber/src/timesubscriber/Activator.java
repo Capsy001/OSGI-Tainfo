@@ -38,7 +38,7 @@ public class Activator implements BundleActivator {
 		
 		while(more!='n' && more!='N') {
 			
-		System.out.println("Enter the trip details to get average time!");
+		System.out.println("\nEnter the trip details to get average time!");
 			
 			
 		System.out.println("\nEnter the Origin: ");
