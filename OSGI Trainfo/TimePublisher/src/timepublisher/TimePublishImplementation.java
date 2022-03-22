@@ -24,7 +24,7 @@ public class TimePublishImplementation implements TimePublish{
 			time = distance/25;
 		}
 		
-		System.out.println("\nAverage time for this trip is: "+time+"\n");
+		System.out.println("\nAverage time for this trip is: "+time+" hours\n");
 		
 		
 	}
