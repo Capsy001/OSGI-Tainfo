@@ -10,7 +10,7 @@ public class Activator implements BundleActivator {
 	ServiceRegistration distanceServiceRegistration;
 
 	public void start(BundleContext context) throws Exception {
-		System.out.println("Distance publisher service started!");
+		System.out.println("------Distance publisher service started!");
 		
 		
 		DistancePublish distanceService = new DistancePublishImplementation();
@@ -20,7 +20,7 @@ public class Activator implements BundleActivator {
 
 	public void stop(BundleContext context) throws Exception {
 		
-		System.out.println("Distance publisher service Stopping!");
+		System.out.println("------Distance publisher service Stopping!");
 		
 		distanceServiceRegistration.unregister();
 	}

@@ -14,7 +14,7 @@ public class Activator implements BundleActivator {
 
 	public void start(BundleContext context) throws Exception {
 		
-		System.out.println("Time publisher service started!");
+		System.out.println("------Time publisher service started!");
 		
 		TimePublish timeService = new TimePublishImplementation();
 		timeServiceRegistration = context.registerService(TimePublish.class.getName(), timeService, null);

@@ -11,7 +11,7 @@ public class Activator implements BundleActivator {
 
 	public void start(BundleContext context) throws Exception {
 		
-		System.out.println("TrainID publisher service started!");
+		System.out.println("------TrainID publisher service started!");
 		
 		TrainIDPublish trainIDService = new TrainIDPublishImplementation();
 		trainIDServiceRegistration = context.registerService(TrainIDPublish.class.getName(), trainIDService, null);
@@ -20,7 +20,7 @@ public class Activator implements BundleActivator {
 
 	public void stop(BundleContext context) throws Exception {
 		
-		System.out.println("TrainID publisher service Stopping!");
+		System.out.println("------TrainID publisher service Stopping!");
 		
 		trainIDServiceRegistration.unregister();
 	}

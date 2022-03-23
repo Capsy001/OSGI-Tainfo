@@ -5,6 +5,7 @@ import java.util.Scanner;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceReference;
+import org.osgi.framework.ServiceRegistration;
 
 import models.Train;
 import trainidpublisher.TrainIDPublish;
@@ -13,10 +14,16 @@ public class Activator implements BundleActivator {
 
 	ServiceReference serviceReference;
 	
+	ServiceRegistration tidSubService;
+	
 
 	public void start(BundleContext context) throws Exception {
+		///
+		Activator tidSubActivator=new Activator();
+		tidSubService = context.registerService(Activator.class.getName(), tidSubActivator, null);
+		///
 		
-		System.out.println("TrainID subscriber service started!");
+		System.out.println("------TrainID subscriber service started!");
 		serviceReference = context.getServiceReference(TrainIDPublish.class.getName());
 		TrainIDPublish trainIDPublish = (TrainIDPublish)context.getService(serviceReference);
 		
@@ -57,8 +64,11 @@ public class Activator implements BundleActivator {
 
 	public void stop(BundleContext context) throws Exception {
 		
-		System.out.println("TrainID subscriber is Stopping!");
+		System.out.println("------TrainID subscriber is Stopping!");
+		
 		context.ungetService(serviceReference);
+		
+		tidSubService.unregister();
 		
 	}
 

@@ -9,4 +9,5 @@ Automatic-Module-Name: TrainIDSubscriber
 Import-Package: org.osgi.framework;version="1.3.0",
  trainidpublisher
 Require-Bundle: TrainIDPublisher;bundle-version="1.0.0"
+Export-Package: trainidsubscriber
 

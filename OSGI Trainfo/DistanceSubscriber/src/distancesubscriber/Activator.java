@@ -17,7 +17,7 @@ public class Activator implements BundleActivator {
 	ServiceReference serviceReference2;
 
 	public void start(BundleContext context) throws Exception {
-		System.out.println("Distance subscriber service started!");
+		System.out.println("------Distance subscriber service started!");
 		
 		//distance service
 		serviceReference = context.getServiceReference(DistancePublish.class.getName());
@@ -59,8 +59,13 @@ public class Activator implements BundleActivator {
 	public void stop(BundleContext context) throws Exception {
 		
 		
-		System.out.println("Distance subscriber is Stopping!");
+		System.out.println("------Distance subscriber is Stopping!");
+		
 		context.ungetService(serviceReference);
+		context.ungetService(serviceReference2);
+		
+		
+		
 	}
 
 }

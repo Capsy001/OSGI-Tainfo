@@ -19,7 +19,7 @@ public class Activator implements BundleActivator {
 
 	public void start(BundleContext context) throws Exception {
 
-		System.out.println("Cost subscriber service started!");
+		System.out.println("------Cost subscriber service started!");
 		costReference = context.getServiceReference(CostPublish.class.getName());
 		CostPublish costPublish = (CostPublish)context.getService(costReference);
 		
@@ -78,6 +78,11 @@ public class Activator implements BundleActivator {
 
 	public void stop(BundleContext context) throws Exception {
 
+		System.out.println("------Cost subscriber service stopping!");
+		
+		context.ungetService(costReference);
+		context.ungetService(tidReference);
+		
 		
 	}
 

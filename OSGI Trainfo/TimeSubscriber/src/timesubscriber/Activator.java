@@ -20,7 +20,7 @@ public class Activator implements BundleActivator {
 	
 	public void start(BundleContext context) throws Exception {
 		
-		System.out.println("Time subscriber service started!");
+		System.out.println("------Time subscriber service started!");
 		timeReference = context.getServiceReference(TimePublish.class.getName());
 		TimePublish timePublish = (TimePublish)context.getService(timeReference);
 		
@@ -70,6 +70,12 @@ public class Activator implements BundleActivator {
 	}
 
 	public void stop(BundleContext context) throws Exception {
+		
+		System.out.println("------Time subscriber service stopping!");
+		
+		context.ungetService(timeReference);
+		context.ungetService(distanceReference);
+		context.ungetService(tidReference);
 	
 	}
 
