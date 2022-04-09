@@ -27,9 +27,13 @@ public class Activator implements BundleActivator {
 		tidReference = context.getServiceReference(TrainIDPublish.class.getName());
 		TrainIDPublish tidPublish = (TrainIDPublish)context.getService(tidReference);
 		
-		////
+
 		Train matchedTrain;
+		int tid=0;
+		int cls=0;
 		double cost;
+		
+
 				Scanner input= new Scanner(System.in);
 				
 				char more= 'y';
@@ -40,9 +44,9 @@ public class Activator implements BundleActivator {
 					
 					
 				System.out.println("\nEnter the Train ID: ");
-				int tid = input.nextInt();
+				tid = input.nextInt();
 				
-				int cls=0;
+				cls=0;
 				
 				System.out.println("Enter the ticket class(1 2 3): ");
 				cls = input.nextInt();
@@ -58,7 +62,8 @@ public class Activator implements BundleActivator {
 				
 				try {
 				
-					matchedTrain = tidPublish.publishTrain(tid);
+
+				  matchedTrain = tidPublish.publishTrain(tid);
 				
 				}catch(Exception e) {
 					
@@ -71,8 +76,8 @@ public class Activator implements BundleActivator {
 					
 					try {
 						
-					
-						cost=costPublish.publishCost(matchedTrain, cls);
+
+					cost=costPublish.publishCost(matchedTrain, cls);
 					
 					}catch (Exception e) {
 						System.out.println("Invalid input!");
