@@ -28,6 +28,10 @@ public class Activator implements BundleActivator {
 		TrainIDPublish tidPublish = (TrainIDPublish)context.getService(tidReference);
 		
 		///
+		Train matchedTrain=new Train(111, 'A', 'N' , "K", "T", 'S');
+		int tid=0;
+		int cls=0;
+		
 				Scanner input= new Scanner(System.in);
 				
 				char more= 'y';
@@ -38,9 +42,9 @@ public class Activator implements BundleActivator {
 					
 					
 				System.out.println("\nEnter the Train ID: ");
-				int tid = input.nextInt();
+				tid = input.nextInt();
 				
-				int cls=0;
+				cls=0;
 				
 				System.out.println("Enter the ticket class(1 2 3): ");
 				cls = input.nextInt();
@@ -56,7 +60,7 @@ public class Activator implements BundleActivator {
 				
 				try {
 				
-				Train matchedTrain = tidPublish.publishTrain(tid);
+				matchedTrain = tidPublish.publishTrain(tid);
 				
 				}catch(Exception e) {
 					
