@@ -27,7 +27,7 @@ public class Activator implements BundleActivator {
 		tidReference = context.getServiceReference(TrainIDPublish.class.getName());
 		TrainIDPublish tidPublish = (TrainIDPublish)context.getService(tidReference);
 		
-		///
+		////
 		Train matchedTrain;
 		double cost;
 				Scanner input= new Scanner(System.in);
