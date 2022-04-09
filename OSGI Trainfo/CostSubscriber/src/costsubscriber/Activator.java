@@ -28,7 +28,7 @@ public class Activator implements BundleActivator {
 		TrainIDPublish tidPublish = (TrainIDPublish)context.getService(tidReference);
 		
 		///
-		Train matchedTrain=new Train(111, 'A', 'N' , "K", "T", 'S');
+		Train matchedTrain=null;
 		int tid=0;
 		int cls=0;
 		
