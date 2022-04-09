@@ -25,7 +25,7 @@ public class DistancePublishImplementation implements DistancePublish {
 		
 		for (Map.Entry<Trip, Integer> set : distance.entrySet()) {
 
-	           if(set.getKey().origin.equals(origin) && set.getKey().dest.equals(dest)) {
+	           if(set.getKey().origin.equalsIgnoreCase(origin) && set.getKey().dest.equalsIgnoreCase(dest)) {
 	        	   
 	        	   return set.getValue();
 	           }

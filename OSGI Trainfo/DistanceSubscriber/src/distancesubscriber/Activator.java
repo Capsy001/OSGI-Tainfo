@@ -31,16 +31,33 @@ public class Activator implements BundleActivator {
 		
 		///
 		char more= 'y';
+		Train matchedTrain= new Train(0, null, more, null, null, more);
 		
 		while(more!='n' && more!='N') {
 			
 			System.out.println("\nEnter the trainID to get distance: ");
+			
+			try {
 			int tid= input.nextInt();
 			
-			Train matchedTrain = trainIDPublish.publishTrain(tid);
+			matchedTrain = trainIDPublish.publishTrain(tid);
+			
+			}catch(Exception e) {
+					System.out.println("Invalid input!");
+					//continue;
+			}
 			
 			if(matchedTrain!=null) {
+				
+				try {
+				
 				System.out.println("Distance for your trip is : "+distancePublish.publishDistance(matchedTrain.getOrigin(), matchedTrain.getDest())+ " Km");
+				
+				}catch(Exception e) {
+					System.out.println("Invalid input!");
+					break;
+				}
+				
 			}else {
 				System.out.println("Invalid ID!\n");
 			}

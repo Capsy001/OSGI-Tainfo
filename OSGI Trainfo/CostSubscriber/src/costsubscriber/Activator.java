@@ -54,12 +54,34 @@ public class Activator implements BundleActivator {
 				
 				}
 				
+				try {
+				
 				Train matchedTrain = tidPublish.publishTrain(tid);
 				
+				}catch(Exception e) {
+					
+					System.out.println("Invalid input!");
+					break;
+					
+				}
+				
 				if(matchedTrain!=null) {
+					
+					try {
+						
+					
 					double cost=costPublish.publishCost(matchedTrain, cls);
 					
+					}catch (Exception e) {
+						System.out.println("Invalid input!");
+						break;
+					}
+					
+					
+					
 					System.out.println("Cost for your trip is: Rs. "+ cost);
+					
+					
 				
 				}else {
 					

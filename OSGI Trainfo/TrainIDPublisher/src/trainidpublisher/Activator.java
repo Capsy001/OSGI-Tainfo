@@ -14,6 +14,7 @@ public class Activator implements BundleActivator {
 		System.out.println("------TrainID publisher service started!");
 		
 		TrainIDPublish trainIDService = new TrainIDPublishImplementation();
+		
 		trainIDServiceRegistration = context.registerService(TrainIDPublish.class.getName(), trainIDService, null);
 		
 	}
