@@ -28,6 +28,8 @@ public class Activator implements BundleActivator {
 		TrainIDPublish tidPublish = (TrainIDPublish)context.getService(tidReference);
 		
 		///
+		Train matchedTrain;
+		double cost;
 				Scanner input= new Scanner(System.in);
 				
 				char more= 'y';
@@ -56,7 +58,7 @@ public class Activator implements BundleActivator {
 				
 				try {
 				
-				Train matchedTrain = tidPublish.publishTrain(tid);
+					matchedTrain = tidPublish.publishTrain(tid);
 				
 				}catch(Exception e) {
 					
@@ -65,12 +67,12 @@ public class Activator implements BundleActivator {
 					
 				}
 				
-				if(matchedTrain!=null) {
+				if(matchedTrain != null) {
 					
 					try {
 						
 					
-					double cost=costPublish.publishCost(matchedTrain, cls);
+						cost=costPublish.publishCost(matchedTrain, cls);
 					
 					}catch (Exception e) {
 						System.out.println("Invalid input!");
