@@ -59,7 +59,7 @@ public class Activator implements BundleActivator {
 				if(matchedTrain!=null) {
 					double cost=costPublish.publishCost(matchedTrain, cls);
 					
-					System.out.println("Cost for your trip is: "+ cost);
+					System.out.println("Cost for your trip is: Rs. "+ cost);
 				
 				}else {
 					
