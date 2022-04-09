@@ -31,6 +31,7 @@ public class Activator implements BundleActivator {
 		Train matchedTrain=null;
 		int tid=0;
 		int cls=0;
+		double cost;
 		
 				Scanner input= new Scanner(System.in);
 				
@@ -74,7 +75,7 @@ public class Activator implements BundleActivator {
 					try {
 						
 					
-					double cost=costPublish.publishCost(matchedTrain, cls);
+					cost=costPublish.publishCost(matchedTrain, cls);
 					
 					}catch (Exception e) {
 						System.out.println("Invalid input!");
